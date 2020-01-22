@@ -1,3 +1,4 @@
+#https://app.codility.com/programmers/lessons/1-iterations/binary_gap/ "codility DeomoTest link
 def solution(N):
     # write your code in Python 3.6
     max = 0
