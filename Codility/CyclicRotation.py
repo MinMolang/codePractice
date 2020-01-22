@@ -1,3 +1,4 @@
 def solution(A, K):
     # write your code in Python 3.6
-    return A[-K:]+A[:-K]
+    front = K%len(A)
+    return A[-front:]+A[:-front]
