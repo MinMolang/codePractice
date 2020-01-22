@@ -1,3 +1,4 @@
+# https://app.codility.com/demo/take-sample-test/ "codility BianaryGap link"
 def solution(N):
     # write your code in Python 3.6
     max = 0
