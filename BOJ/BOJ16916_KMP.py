@@ -27,7 +27,7 @@ def kmp(s, p):
         while j>0 and s[i] !=p[j]:
             j = pi[j-1]
             # print("while",i,j)
-            continue
+
 
         if s[i]==p[j]:
             if j == m-1:
