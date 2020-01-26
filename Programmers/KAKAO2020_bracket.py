@@ -1,7 +1,7 @@
 # https://programmers.co.kr/learn/courses/30/lessons/60058
 # 괄호 변환
 # 정확도 테스트 통과, 몇몇 Testcase, Best 코드가 1초 더 빠름
-
+# 2020-01-26
 def correct(sent):
     ssize = 0
     save = 0
