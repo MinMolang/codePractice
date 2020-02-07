@@ -5,7 +5,7 @@ import sys
 input = sys.stdin.readline()
 v,e,s = map(int,input.split()) #vertex 개수, edge 개수, 시작점
 # 1. 그래프만들기
-edge = [[] for x in range(v+1)]
+edge = [[] for x in range(v+1)] #그래프 시작은 0 이 아니라 1부터
 
 for j in range(e):
     sent = sys.stdin.readline()

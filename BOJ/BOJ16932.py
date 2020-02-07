@@ -1,6 +1,6 @@
 # https://www.acmicpc.net/problem/16932
 # 모양 만들기
-
+# BFS 탐색
 
 import sys
 from collections import Counter,deque
