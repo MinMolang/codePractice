@@ -3,15 +3,7 @@
 # Union Find로
 # 140ms (PyPy3)
 # 시간복잡도 O(ackerman inverse function(n))
-'''
-시작은 1이고
-계속 부모를 찾아나가는과정이고
-1과 연결되어있는 set의 개수에서 1만 뺴면 되는 건데
 
-Union의 역할 (x,y)를 합집합시키는 것
-Find의 역할 x의 부모를 찾는 역할
-
-'''
 import sys
 
 n = int(sys.stdin.readline().strip()) #노드의 개수
