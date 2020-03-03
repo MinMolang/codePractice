@@ -16,46 +16,51 @@ result
 '''
 def solution(words, queries):
     answer = []
-
+    qdic  = {}
     for q in queries:
-    #     string도 for 문이 가능하니까
+    #     queries 해쉬로 만들어야함 ㅋㅋㅋㅋ
         ans = 0
-        qlen = len(q)
-        if q[0] == '?':
-            print("앞")
-            i = 0
-            while  '?' == q[i]:
+        if q not in qdic:
 
-                i+=1
-            print(i) #예상 : 3 : 실제 4 +1 되었음
-            for w in words:
-                check = 0
-                print("예상 :1 ", qlen - i)
-                for k in range(qlen-i):  # 여기까지만 앞에서부터 체크하면됨
-                    if len(w)==qlen and w[qlen-k-1] == q[qlen-k-1]:
-                        check += 1
-                    else:
-                        break
-                if check == qlen-i:
-                    print("앞까지 모두 맞음 ")
-                    ans += 1
-        elif q[-1] == '?':
-            print("뒤")
-            i = qlen-1
-            while '?' == q[i]:
-                i -= 1
-            print(i) # 예상 3 , 2, 3, 3  /2, 1 22 -1 되어있음
-            for w in words:
-                check = 0
-                for k in range(i+1): # 여기까지만 앞에서부터 체크하면됨
-                    if len(w) == qlen and w[k] == q[k]:
-                        check+=1
-                    else :
-                        break
-                if check == i+1:
-                    print("뒤 모두 맞음 ")
-                    ans +=1
 
+            qlen = len(q)
+            if q[0] == '?':
+                print("앞")
+                i = 0
+                while  '?' == q[i]:
+
+                    i+=1
+                print(i) #예상 : 3 : 실제 4 +1 되었음
+                for w in words:
+                    check = 0
+                    print("예상 :1 ", qlen - i)
+                    for k in range(qlen-i):  # 여기까지만 앞에서부터 체크하면됨
+                        if len(w)==qlen and w[qlen-k-1] == q[qlen-k-1]:
+                            check += 1
+                        else:
+                            break
+                    if check == qlen-i:
+                        print("앞까지 모두 맞음 ")
+                        ans += 1
+            elif q[-1] == '?':
+                print("뒤")
+                i = qlen-1
+                while '?' == q[i]:
+                    i -= 1
+                print(i) # 예상 3 , 2, 3, 3  /2, 1 22 -1 되어있음
+                for w in words:
+                    check = 0
+                    for k in range(i+1): # 여기까지만 앞에서부터 체크하면됨
+                        if len(w) == qlen and w[k] == q[k]:
+                            check+=1
+                        else :
+                            break
+                    if check == i+1:
+                        print("뒤 모두 맞음 ")
+                        ans +=1
+            qdic[q] = ans
+        else:
+            ans = qdic[q]
         answer.append(ans)
     return answer
 
