@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f6e05c8d-828d-4da0-8cce-8746008047e5" name="Default Changelist" comment="Name Change">
-      <change afterPath="$PROJECT_DIR$/BOJ/BOJ11279.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BOJ/BOJ1655.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BOJ/BOJ1717.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BOJ/BOJ1717_REVISE.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BOJ/BOJ1927.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BOJ/BOJ9935.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BOJ/searchLyrics.py" afterDir="false" />
+    <list default="true" id="f6e05c8d-828d-4da0-8cce-8746008047e5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BOJ/BOJ2606_UNIONFIND.py" beforeDir="false" afterPath="$PROJECT_DIR$/BOJ/BOJ2606_UNIONFIND.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BOJ/searchLyrics.py" beforeDir="false" afterPath="$PROJECT_DIR$/BOJ/searchLyrics.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,8 +52,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/BOJ/searchLyrics.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="55" column="37" lean-forward="true" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
+            <state relative-caret-position="51">
+              <caret line="13" selection-start-line="13" selection-end-line="59" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -342,7 +335,21 @@
       <option name="project" value="LOCAL" />
       <updated>1581059089660</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="정확도 테스트는 통과... &#10;효율성 1,2 시간초과 3 런타임에러">
+      <created>1583220123216</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1583220123216</updated>
+    </task>
+    <task id="LOCAL-00003" summary="쿼리 해쉬 만들어서 정확도 테스트는 통과... 효율성 1 시간초과 해결&#10;but &#10;2 시간초과 3 런타임에러">
+      <created>1583220935582</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1583220935582</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -389,7 +396,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Name Change" />
-    <option name="LAST_COMMIT_MESSAGE" value="Name Change" />
+    <MESSAGE value="정확도 테스트는 통과... &#10;효율성 1,2 시간초과 3 런타임에러" />
+    <MESSAGE value="쿼리 해쉬 만들어서 정확도 테스트는 통과... 효율성 1 시간초과 해결&#10;but &#10;2 시간초과 3 런타임에러" />
+    <option name="LAST_COMMIT_MESSAGE" value="쿼리 해쉬 만들어서 정확도 테스트는 통과... 효율성 1 시간초과 해결&#10;but &#10;2 시간초과 3 런타임에러" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/BOJ/Programmers60057.py" />
@@ -585,8 +594,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/BOJ/searchLyrics.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="55" column="37" lean-forward="true" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
+        <state relative-caret-position="51">
+          <caret line="13" selection-start-line="13" selection-end-line="59" selection-end-column="17" />
         </state>
       </provider>
     </entry>
