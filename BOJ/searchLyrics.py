@@ -5,7 +5,7 @@
 # 모든 곳에 ? 포함되어있고, 접두사, 접미사에만 존재
 #  양쪽에도 없으니까 일단 처음과 끝을 ? 있는지 체크하고 ?가 나오는 동안 체크하면 될 것 같네
 
-
+# trie 구조를 사용해야한다고 함 ....
 # words = ["frodo", "front", "frost", "frozen", "frame", "kakao"]
 words = ["min", "its", "m"]
 queries = ["???", "mi?"]
