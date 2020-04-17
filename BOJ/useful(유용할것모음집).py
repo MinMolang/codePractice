@@ -5,6 +5,19 @@ board = [[0]*m for _ in range(n)] #0으로 초기화
 a = [list(map(int,input().split())) for _ in range(n)] #2차 행렬 읽어들이기
 
 '''
+'''
+< 최대 출력, 같으면 오름차순>
+score = [0, 0, 0]
+for idx, s in enumerate(score):
+    if s == max(score):
+        result.append(idx+1)
+
+'''
+'''
+key, idx 오름차순, 내림차순
+
+
+'''
 
 '''
 <상하좌우, 대각선 이동 (앞의 4개가 상하좌우)>
@@ -71,4 +84,13 @@ def bfs(x, y, cnt):
     d.pop() #덱 오른쪽에서 빼내기
     d.appendleft(0) #덱왼쪽으로 추가 
     
+'''
+
+'''
+[pop 에 관하여]
+# print(solution(n,t,m,timetable))
+list = [1,2,3,4]
+print(list.pop()) #맨 뒤  4
+print(list.pop(0)) #맨 앞  1 
+
 '''

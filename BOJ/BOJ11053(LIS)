@@ -1,0 +1,24 @@
+# best코드 참소
+'''
+6
+10 20 10 30 20 50
+
+출력
+4
+'''
+n = int(input())
+a = list(map(int,input().split()))
+d = [0]*n
+for i in range(n):
+    print("i",i)
+    d[i] = 1
+
+    for j in range(i):
+        if a[j] < a[i] and d[j]+1 > d[i]:
+            print("j",j)
+            d[i] = d[j]+1
+            print("d",d[i])
+print(max(d))
+
+# n*n 체크하나
+# 10
