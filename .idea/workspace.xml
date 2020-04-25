@@ -2,44 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6e05c8d-828d-4da0-8cce-8746008047e5" name="Default Changelist" comment="자물쇠와 열쇠 최종본">
-      <change afterPath="$PROJECT_DIR$/BOJ/BOJ11053(LIS)" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BOJ/BOJ1790(이분탐색).py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Programmers/BP_모의고사.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Programmers/HASH_완주하지 못한 선수.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Programmers/KAKAO2018_Cache.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Programmers/KAKAO2018_FriendsBlock.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Programmers/KAKAO2018_NEWS.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Programmers/KAKAO2018_Shuttlebus3.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Programmers/KAKAO2018_traffic.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Programmers/LinePractice3.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Programmers/LinePretest1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Programmers/Linepractice2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Programmers/PRETEST2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Programmers/PRETEST3.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Programmers/PRETEST4.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Programmers/SORT_K번째수.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Programmers/bubblesort.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Programmers/hakerank2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BOJ/BOJ10845.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BOJ/BOJ10866.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BOJ/BOJ11048" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BOJ/BOJ11279.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BOJ/BOJ11425.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BOJ/BOJ13505.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BOJ/BOJ14426.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BOJ/BOJ14502.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BOJ/BOJ1463.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BOJ/BOJ1629.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BOJ/BOJ1655.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BOJ/BOJ16916.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BOJ/BOJ16932.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BOJ/BOJ1927.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BOJ/BOJ2805.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BOJ/BOJ9093.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BOJ/useful(유용할것모음집).py" beforeDir="false" afterPath="$PROJECT_DIR$/BOJ/useful(유용할것모음집).py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Programmers/hotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/Programmers/HEAP_hotter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BOJ/BOJ1790(이분탐색).py" beforeDir="false" afterPath="$PROJECT_DIR$/BOJ/BOJ1790(이분탐색).py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BestCode/BOJ1790(수이어쓰기2)" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BestCode/HEAP_더맵게" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,7 +24,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Programmers/PRETEST1.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1045">
@@ -109,7 +75,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BestCode/HASH_완주하지못한선수_BEST2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
+            <state relative-caret-position="114">
               <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
             </state>
           </provider>
@@ -117,12 +83,20 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BOJ/BOJ2805(이진탐색트리).py">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="21" column="11" selection-start-line="8" selection-end-line="21" selection-end-column="11" />
+            </state>
+          </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BOJ/BOJ1790(이분탐색).py">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -226,6 +200,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -263,7 +238,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -487,7 +461,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22893482" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -755,13 +728,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Programmers/PRETEST1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1045">
-          <caret line="55" column="15" selection-start-line="55" selection-start-column="15" selection-end-line="55" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Programmers/KAKAO2018_NEWS.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -793,6 +759,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/BestCode/HASH_완주하지못한선수_BEST2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BOJ/BOJ2805(이진탐색트리).py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" column="11" selection-start-line="8" selection-end-line="21" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/BOJ/BOJ10828.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
@@ -800,18 +780,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BestCode/HASH_완주하지못한선수_BEST2.py">
+    <entry file="file://$PROJECT_DIR$/BOJ/BOJ1790(이분탐색).py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+        <state relative-caret-position="171">
+          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BOJ/BOJ2805(이진탐색트리).py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BOJ/BOJ1790(이분탐색).py">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/Programmers/PRETEST1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1045">
+          <caret line="55" column="15" selection-start-line="55" selection-start-column="15" selection-end-line="55" selection-end-column="38" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
