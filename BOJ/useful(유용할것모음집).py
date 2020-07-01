@@ -1,4 +1,21 @@
 '''
+list element to str
+ before
+  ans = ''
+        for t in arr:
+            ans+=str(t)
+        print(ans)
+ after
+        ans =''.join(map(str, arr))
+
+str to list element
+
+lis = [x for x in numbers]
+
+'''
+
+
+'''
 <2차원 리스트 만들기>
 
 board = [[0]*m for _ in range(n)] #0으로 초기화
