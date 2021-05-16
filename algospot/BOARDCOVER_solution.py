@@ -25,76 +25,93 @@
 # 블록은 4가지가 노올 수 있다.
 # 남은 게인판을 다시 재기 호출로 넘긴다
 
-#TODO
-# 입력구현 OK
-# 흰색 구간 찾아보기
+# 코드 출처 : https://junho-one.tistory.com/2
 import sys
 
 # 칸을 덮을 수 있는 네가지 방법
 # 블록을 구성하는 세칸의 상대적 위치 (dy, dx)
-coverType = [[[0, 0], [1, 0], [0, 1]], [[0, 0], [0, 1], [1, 1]], [[0, 0], [1, 0], [1, 1]], [[0, 0], [1, 0], [1, -1]]]
+move = [[(0, 0), (0, 1), (1, 0)], [(0, 0), (0, 1), (1, 1)], [(0, 0), (1, 0), (1, 1)], [(0, 0), (1, 0), (1, -1)]]
 
-# board(y,x)를 type번 방법으로 덮거나, 덮었던 블록을 없앤다
-# delta 1 덮고, -1이면 덮었던 블록을 없앤다
-# 블록이 제대로 덮이지 않은 경우 (게임밖, 겹치거나, 검은 칸) -> false 반환
+def firstEmpty():
+  for x in range(H):
+      for y in range(W):
+          if matrix[x][y] == '.':
+              return x, y
 
-def set(board, y, x, type, delta):
-    ok = True
-    for i in range(3):
-        ny = y + coverType[type][i][0]
-        nx = x + coverType[type][i][1]
-        if ny < 0 or ny >= len(board) or nx < 0 or nx >= len(board[0]):
-            ok = False
-        # board[ny][nx] += delta
-        elif (board[ny][nx] + delta) >1:
-            board[ny][nx] += delta
-            ok = False
-    return ok
+  return -1, -1
 
-# board의 모든 빈 칸을 덮을 수 있는 방법의 수를 반환하다
-# board[i][j] = 1 이미 덮인 칸 혹은 검은칸
-# board[i][j] = 0 아직 덮이지 않은 칸
-def cover(board):
-    # 아직 채우지 못한 칸 중 가장 윗줄 왼쪽에 있는 칸을 찾는다
-    y, x = -1, -1
-    for i in range(len(board)):
-        for j in range(len(board[i])):
-            if board[i][j] == 0:
-                y, x = i,j
-                break
-        if y!= -1: # 어떤 의미인지 아직 파악하지 못함
-            break
 
-# 기저사례 : 모든 칸을 채웠으면 1을 반환
-    if y == -1 :
-        return 1
-    ret = 0 #의 역할은?
-    for type in range(4):
-        # 만약 board[y][x]를 type 형태로 덮을 수 있으면 재귀 호출한다
-        if set(board, y, x, type, 1):
-            ret += cover(board)
+def checkBlock(x, y, num):
 
-        # 덮었던 블록을 치운다
-        set(board, y, x, type, -1)
-    return ret
+  for dx, dy in move[num]:
+
+      nx = x + dx
+      ny = y + dy
+
+      if not (0 <= nx < H and 0 <= ny < W):
+          return False
+
+      if matrix[nx][ny] == '#':
+          return False
+
+  return True
+
+
+def fillBlock(x, y, num):
+
+  for dx, dy in move[num]:
+      nx = x + dx
+      ny = y + dy
+      matrix[nx][ny] = '#'
+
+
+def removeBlock(x, y, num):
+
+  for dx, dy in move[num]:
+      nx = x + dx
+      ny = y + dy
+      matrix[nx][ny] = '.'
+
+
+def countBlock():
+
+  x, y = firstEmpty()
+
+  if x is -1 and y is -1:
+      return 1
+
+  ret = 0
+
+  for m in range(len(move)):
+      if checkBlock(x, y, m):
+          fillBlock(x, y, m)
+          ret += countBlock()
+          removeBlock(x, y, m)
+
+  return ret
+
 
 
 
 n = int(input())
 for _ in range(n):
   # H,W 입력
-  h,w = sys.stdin.readline().strip().split()
-  h,w = int(h), int(w)
+  H,W = map(int, sys.stdin.readline().rstrip().split(" "))
+
 
   #board판입력
-  origin = [input() for _ in range(h)]
-  copy = [[0]*w for _ in range(h)]
-  for r in range(h):
-      for c in range(w):
-          if origin[r][c] != '#':
-              copy[r][c] == 1
+  matrix = [list(sys.stdin.readline().rstrip()) for _ in range(H)]
+
+  white = 0
+  for r in range(H):
+      for c in range(W):
+          if matrix[r][c] == '.':
+              white +=1
 
 
-  print(origin)
-  ans = cover(copy)
-  print(ans)
+  # 3의 배수 체크
+  if white % 3 == 0:
+    ans = countBlock()
+    print(ans)
+  else:
+    print(0)
