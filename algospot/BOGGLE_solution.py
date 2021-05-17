@@ -46,37 +46,27 @@ def hasWord(y, x, test_case):
       #print('t1')
       return False
     
-    # 기저사례2. 첫글자가 일치하지 않으면 실패
-    if board[y][x] != test_case[0]:
-      #print('bo',board[y][x])
-      #print('tc',test_case[0])
-      #print('t2')
-      return False
-      
-    # 기저사례3. 단어길이가 1이면 성공
-    if len(test_case) == 1:
-      #print('t3')
-      return True
-      
-    #boolean = (test_case[0]==board[y][x])
-    #test_case = test_case[1:]
+    boolean = (test_case[0]==board[y][x])
+    test_case = test_case[1:]
     
-    #if boolean:
-    #  if not(len(test_case)):
+    if boolean:
+      if not(len(test_case)):
         # 빈경우
-     #   print('t2')
-      #  return True
-      #else:
-    #print('t4')
+        #print('t2')
+        return True
+      else:
+        #print('t4')
         #인접한 여덟 칸을 검사한다.
-    for k in range(8):
-        nx = x + dx[k]
-        ny = y + dy[k]
+        for k in range(8):
+          #다이나믹 프로그래밍
+            nx = x + dx[k]
+            ny = y + dy[k]
         
-        if hasWord(ny, nx, test_case[1:]):
-          return True
-    #print('t5')
-    return False
+            if hasWord(ny, nx, test_case):
+              return True
+    else:
+      #print('t5')
+      return False
 
 
 c = int(input())
