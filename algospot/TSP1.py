@@ -19,6 +19,19 @@
 
 import sys
 
+def travel(visited, min_val):
+    global n
+    # 다 방문했으면 종료
+    if len(n) == len(visited):
+      return min_val
+    
+    # 새롭게 방문
+    # 최소값 갱신
+    for i in range(1, n):
+      if i not in visited:
+        travel(visited.append(i), min_val)
+    
+    
 
 c = int(input())
 for _ in range(c):
@@ -27,3 +40,12 @@ for _ in range(c):
     # 거리담기
     dist = [list(map(float, sys.stdin.readline().split())) for _ in range(n)]
     print(dist)
+
+    min_val = 1416
+  # 최초시작 0의 거리로 시작, 0,0 과 0,1 / 0,0 과 0,2 이렇게 구하는visited에 넣는다
+    result = []
+    for i in range(1, n):
+      res = travel([0,i], min_val)
+      result.append(res)
+  
+    print(min(result))
