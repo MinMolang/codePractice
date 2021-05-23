@@ -9,33 +9,22 @@ xy = [
     (1, 1),
 ]
 
-#코드출처: https://doriri.tistory.com/33 [My Programming]
+#코드출처: aksndk123님 코드
 
-
-def find_word_st(dx, dy, test_case, index):
-    for (x, y) in xy:
-        if dy + y > 4 or dy + y < 0 or dx + x > 4 or dx + x < 0:
-            continue
-
-        if board[dy + y][dx + x] is test_case[index]:
-            if length is index + 1:
-                return True
-            if find_word_st(dx + x, dy + y, test_case, index + 1) is True:
-                return True
-
-
-def find_word_ch(test_case):
-    global length
-    length = len(test_case)
-
-    for dy in range(0, 5):
-        for dx, ch in enumerate(board[dy]):
-            if test_case[0] is ch:
-                if find_word_st(dx, dy, test_case, 1) is True:
-                    return "YES"
-
-    return "NO"
-
+def has_word(x, y, index):
+    global board, str_len, xy, test_case, visit
+    if board[x][y] != test_case[index]:
+        return 0
+    elif board[x][y] == test_case[index] and index == str_len - 1:
+        return 1
+    else:
+        visit[x][y][index] = 1
+        for dx, dy in xy:
+            nx, ny = x + dx, y + dy
+            if 0 <= nx < 5 and 0 <= ny < 5 and index + 1 < str_len and visit[nx][ny][index + 1] == 0:
+                if has_word(nx, ny, index + 1):
+                    return 1
+    return 0
 
 c = int(input())
 for _ in range(c):
@@ -46,5 +35,17 @@ for _ in range(c):
     n = int(input())
     for _ in range(n):
         test_case = input()
-
-        print(test_case, find_word_ch(test_case))
+        str_len = len(test_case)
+        visit = [[[0] * str_len for _ in range(5)] for ___ in range(5)]
+        flag = 0
+        for i in range(5):
+            for j in range(5):
+                if has_word(i, j, 0):
+                    flag = 1
+                    break
+            if flag == 1:
+                break
+        if flag:
+            print(test_case + " YES")
+        else:
+            print(test_case + " NO")
