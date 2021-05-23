@@ -1,56 +1,42 @@
-# 2
-# 3
-# 0.0000000000  611.6157225201  648.7500617289
-# 611.6157225201  0.0000000000  743.8557967501
-# 648.7500617289  743.8557967501  0.0000000000
+# 입력
 # 4
-# 0.0000000000  326.0008994586  503.1066076077  290.0250922998
-# 326.0008994586  0.0000000000  225.1785728436  395.4019367384
-# 503.1066076077  225.1785728436  0.0000000000  620.3945520632
-# 290.0250922998  395.4019367384  620.3945520632  0.0000000000
+# w
+# xbwwb
+# xbwxwbbwb
+# xxwwwbxwxwbbbwwxxxwwbbbwwwwbb
 
-# 1260.3657842490
-# 841.2045646020
+# 출력
+# w
+# xwbbw
+# xxbwwbbbw
+# xxwbxwwxbbwwbwbxwbwwxwwwxbbwb
 
-# TODO
-# 입력 ok
-# 소수 처리 ok
-# 재귀 구현, 안가본 곳 모든 경우의 수 찾기
+# 코드 출처 : https: // doctcoder.tistory.com / 37[하고싶은일있는개발]
+# 큰 입력에 대해서도 동작하는 효율적인 알고리즘 처음부터 새로 만들기
+# 작은 입력에 대해서만 동작하는 단순한 알고리즘으로부터 시작해서 최적화해 나가기 
 
-import sys
+# 단순한 알고리즘 부터 시작, 재귀 호출로 구현 
+# 압축해제 -> 상하반전 -> 쿼드 트리 압축 
 
 
-def travel(visited, min_val):
-    global n
-    # 다 방문했으면 종료
-    if len(n) == len(visited):
-        return min_val
-
-    # 새롭게 방문
-    # 최소값 갱신
-    for i in range(1, n):
-        if i not in visited:
-            travel(visited.append(i), min_val)
-
+def reverse(compressed, idx):
+    head = compressed[idx]
+    if head == 'w' or head == 'b': # 픽셀 모두 흰색, 검정색 통일된 경우, 상하 바뀌어도 상관 없음 
+        return head
+    
+    # head가 x 인경우
+    idx += 1 # x가 나온 위치 한 칸뒤,
+    upperLeft = reverse(compressed, idx)
+    idx += len(upperLeft) # 왼쪽 위가 차지하는 칸수만큼 뒤, (getChunkLength() 역할)
+    upperRight = reverse(compressed, idx)
+    idx += len(upperRight) # 오른쪽 위가 차지하는 칸수만큼 뒤, (getChunkLength() 역할)
+    lowerLeft = reverse(compressed, idx)
+    idx += len(lowerLeft) # 왼쪽 아래가 차지하는 칸수만큼 뒤, (getChunkLength() 역할)
+    lowerRight = reverse(compressed, idx)
+    return 'x' + lowerLeft + lowerRight + upperLeft + upperRight # 상하 반전
+    
 
 c = int(input())
-for _ in range(c):
-    # 테스트 케이스받아오기
-    n = int(input())
-    # 거리담기
-    dist = [list(map(float, sys.stdin.readline().split())) for _ in range(n)]
-    print(dist)
-
-    min_val = 1416
-    # 최초시작 0의 거리부터 방문, 1, 2, 3 거리 확인
-    # 언제 min_val을 업데이트해줘야하지?
-    result = []
-    for i in range(1, n):
-        dis = dist[0][i]
-        if dis < min_val:
-            min_val = dis
-            print(i, '업데이트 된 min_val', min_val)
-        res = travel([0, i], min_val)
-        result.append(res)
-
-    print(min(result))
+for i in range(c):
+    compressed = input()
+    print(reverse(compressed, 0)) # 인덱스 0부터 시작
