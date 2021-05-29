@@ -20,12 +20,26 @@
 # 그 외의 경우 난이도: 10
 import  sys
 
+sys.setrecursionlimit(10**6)
 INF = 987654321
 
 # numbers [a .. b] 구간의 난이도를 반환
 def classify(a, b):
     # 숫자 조각을 가져온다
-    sub = numbers[a, b - a + 1]
+    sub = numbers[a :5
+12341234
+11111222
+12122222
+22222222
+12673939
+
+    5
+    12341234
+    11111222
+    12122222
+    22222222
+    12673939
+    b+1]
     # 첫 글자만으로 이루어진 문자열과 같으면 난이도 1
     if len(set(sub)) == 1:
         return  1
@@ -34,6 +48,7 @@ def classify(a, b):
     for i in range(len(sub) - 1):
         if (sub[i+1] - sub[i]) != (sub[1] - sub[0]):
             progressive = False
+            break
 
     # 단조증가, 감소, = 등차수열이고 공차가 1 또는 -1이면 난이도 2
     if progressive and abs(sub[1] - sub[0]) == 1:
@@ -42,8 +57,9 @@ def classify(a, b):
     # 두 수가 번갈아 등장하는지 확인
     alternating = True
     for i in range(len(sub)):
-        if sub[i] != sub(i % 2):
+        if sub[i] != sub[i % 2]: # 리스트 괄호 오타
             alternating  = False
+            break #추가
 
     if alternating:
         return 4
@@ -55,27 +71,29 @@ def classify(a, b):
 
 # 시작하는 인덱스
 def memorize(begin):
-    ret = 0 # 최소 수
+
     # 기저사례 : 수열의 끝에 도달했을 경우
     if begin == len(numbers):
         return 0
 
     # 메모이제이션
     ret = dp[begin]
-    if ret != -1:
+    if ret != -1: # -1 초기값인지, 이미 구했는지 확인
         return ret
 
     ret = INF
     # 세자리수, 다섯자리 수 판단
     for num in [3, 4, 5]:
         if begin + num <= len(numbers):
-            ret = min (ret, memorize(begin + num) + classify(begin, begin + num - 1))
+            ret = min (ret, memorize(begin + num) + classify(begin, begin + num - 1)) # 구하지 않은 값이미면 최소값 구하기
 
     return ret
 
 for _ in range(int(input())):
-    numbers = sys.stdin.readline().rstrip()
-    dp = [0] * len(numbers)
+    numbers = list(map(int, list(input().strip())))
+    dp = [-1] * len(numbers)
     print(memorize(0))
+
+
 
 
