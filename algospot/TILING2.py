@@ -18,6 +18,7 @@ dp = [-1 ] * 101
 def Tiling2(n):
     if dp[n] != -1:
         return dp[n]
+    # 없으면 Out of Index
     if n <= 0:
         return false
     if n==1:
