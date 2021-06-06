@@ -22,24 +22,31 @@
 # 2  7  5  9  4
 # 의 경우 6 + 2 + 4 + 7 + 9
 
-# 풀이 참고 https://hellominchan.tistory.com/239
+# 풀이 참고 limdongjin님 코드
+
+
 import sys
-
 input = sys.stdin.readline
-for _ in range(int(input())):
-    n = int(input())
-    board = [list(map(int, input().split())) for _ in range(n)]
+def path(board, n):
+    dp = [[-1]*(n+1) for _ in range(n+1)]
+    
+    def _path(y, x):
+        if y == n - 1:
+            return board[y][x]
+        if dp[y][x] != -1:
+            return dp[y][x]
 
-    for i in range(1, n):
-        for j in range(i + 1):
-            if j == 0:
-                board[i][j] += board[i - 1][j]
-            elif j == i:
-                board[i][j] += board[i - 1][j - 1]
-            else:
-                board[i][j] += max(board[i - 1][j], board[i - 1][j - 1])
+        dp[y][x] = board[y][x] + max(_path(y+1, x), _path(y+1, x+1))
+        return dp[y][x]
 
-    print(max(board[-1]))
+    return _path(y=0,x=0)
+c = int(input())
+board = [[0]*101 for _ in range(101)]
+for _ in range(c):
+    n  = int(input())
+    for y in range(n):
+        line = list(map(int, input().split()))
+        for x in range(y+1):
+            board[y][x] = line[x]
 
-
-
+    print(path(board, n))
