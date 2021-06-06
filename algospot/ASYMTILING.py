@@ -8,58 +8,46 @@
 # 0
 # 2
 # 913227494
-#코드풀이 참고 https://jinu0418.tistory.com/39
+#코드풀이 참고 sanghyun.lee
 
 
 import sys
 
-input = sys.stdin.readline
-mod = 1000000007
+dp = []
+MOD = 1000000007
 
-
-def _init_():
-    global dp
-    dp = [-1] * 101
-    dp[0] = 0
-    dp[1] = 1
-    dp[2] = 2
-    dp[3] = 3
-    dp[4] = 5 # 4 아님
 
 def Tiling(n):
-    global dp
+    n = int(n)
+    if n <= 1:
+        return 1
 
-    if dp[n] != -1:
-        return dp[n] % mod
+    ret = dp[n]
+    if ret != -1:
+        return ret
 
-    dp[n] = (Tiling(n-1)%mod + Tiling(n-2)%mod) %mod #경우의 수가 음수가 나오지 않게 하기 위해서
-    return dp[n]
+    ret = (Tiling(n - 1) + Tiling(n - 2)) % MOD
+    dp[n] = ret
+    return ret
+
 
 def asymmetric(n):
-    global dp
+    if (n % 2) == 1: # 홀수 방법 
+        return (Tiling(n) - Tiling(n / 2) + MOD) % MOD
+
     ret = Tiling(n)
-
-    # 비대칭 구하는 법 : 전체 수 - 대칭 수
-
-
-    if ((n - 1) % 2 == 0):
-        ret = (ret - Tiling((n - 1) // 2) + mod) % mod
-    if ((n - 2) % 2 == 0):
-        ret = (ret - Tiling((n - 2) // 2) + mod) % mod
-    if (n % 2 == 0):
-        ret = (ret - Tiling(n // 2) + mod) % mod
+    ret = (ret - Tiling(n / 2) + MOD) % MOD # 짝수방법 1) 
+    ret = (ret - Tiling(n / 2 - 1) + MOD) % MOD # 짝수 방법 2) 
 
     return ret
 
 
+if __name__ == "__main__":
+    test_case = int(sys.stdin.readline())
 
-for _ in range(int(input())):
-    _init_()
-    n = int(input())
-    if n == 2: #dp[2] 초기화에서 문제가 있다고 해서
-        print(0)
-    else:
-        print(asymmetric(n)) #숫자가 너무 커서 문제조건에 맞게 나머지로 output
-
+    for i in range(test_case):
+        count = int(sys.stdin.readline())
+        dp = [-1 for i in range(count + 1)]
+        print(asymmetric(count))
 
 
