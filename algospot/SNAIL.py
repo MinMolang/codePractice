@@ -12,26 +12,38 @@
 # 0.5625000000
 # 0.9375000000
 
-# Courier님 코드 참고
 
+#chacham님 코드 참고
 import sys
+sys.setrecursionlimit(10000)
 
-# 소수점 10자리 처리
-def climb(n, m):
-    if n <= 0:
-        return 1.
-    if m == 0:
-        return 0.
-    if dp[n - 1][m - 1] is None:
-        dp[n -1][m - 1] = (0.25 * climb(n - 1, m - 1)) + (0.75 * climb(n - 2, m - 1))
-    return dp[n -1][m - 1]
+dp = [[-1] * (1001) for _ in range(1001)]
+for i in range(1001):
+    dp[i][0] = 0
+    dp[i][1] = 0
+for i in range(1001):
+    dp[0][i] = 1
+    dp[1][i] = 1
+dp[0][0], dp[0][1] = 1, 1
+dp[1][0], dp[1][1] = 0, 1
+dp[2][1] = 0.75
 
+def climb(N, M):
+    def rec(restHeight, restDays):
+        if dp[restHeight][restDays] != -1:
+            return dp[restHeight][restDays]
+        if restDays == 0:
+            return 1 if restHeight <= 0 else 0
+        if restHeight <= restDays:
+            return 1
+        dp[restHeight][restDays] = rec(restHeight-2, restDays-1) * 0.75 + rec(restHeight-1, restDays-1) * 0.25
+        return dp[restHeight][restDays]
+    return rec(N, M)
 
 
 for _ in range(int(input())):
-    # H,W 입력
+
     n, m = sys.stdin.readline().strip().split()
     n, m = int(n), int(m) # depth, days
 
-    dp = [[None] * 1000 for _ in range(1000)] # dp[n][m] n,m <= 1000
     print(format(climb(n, m), ".10f"))
