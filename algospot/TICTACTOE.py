@@ -17,6 +17,15 @@
 
 ##jgd0423 님 풀이 참고
 
+# 이기지 못할 경우에는 차라리 비기는 쪽으로 수를 둔다
+
+# 상황 3가지
+# 이번차례이인 참가자가 이길 수 있는 경우
+# 이길수는 없지만 최선을 다하면 비길 수는 있는 경우
+# 최선을 다해도 상대가 실수하지 않으면 항상 질 수 밖에 없는 경우
+
+
+
 import sys
 input = lambda : sys.stdin.readline()
 
@@ -34,8 +43,7 @@ def bijection(board):
 
     return ret
 
-
-# 한 줄이 채워졌는지 확인하는 함수
+# 한 줄이 채워졌는지 확인하는 함수 (이기는 경우)
 def is_finished(board, turn):
 
     # 가로
@@ -71,8 +79,12 @@ def is_finished(board, turn):
     return False
 
 
+# canwin(board) = -1인 수가 있으면 무조건 그 쪽을 채우고, 없으면 0인쪽을 택하고 아니면 1인쪽을 택해야 한다
+# 모든 수를 시도해보며 반환 값 중 가장 작은 것을 찾는다, -1이 반환되면 내가 이길 수 있는 것, -1이 없이 0이 있다면 비기는 것
 def can_win(board, turn):
     opponent = 'o' if turn == 'x' else 'x'
+
+
     if is_finished(board, opponent):
         return -1
 
@@ -96,6 +108,7 @@ def can_win(board, turn):
     return -min_value
 
 
+# 공백을 찾고 공백이 홀수면 'x' 차례, 아니면 'o' 차례
 def find_start(board):
     empty = 0
     for i in range(3):
@@ -104,7 +117,8 @@ def find_start(board):
                 empty += 1
     
     return 'x' if empty % 2 == 1 else 'o'
-        
+
+
 for _ in range(int(input().strip())):
     board = []
     
@@ -112,14 +126,15 @@ for _ in range(int(input().strip())):
         row = list(input().strip())
         board.append(row)
     
-    dp = [-2 for _ in range(3 ** 9)] #boad를 아홉자리의 3진수 숫자로 본다 총 3^9 = 19683 
+    dp = [-2 for _ in range(3 ** 9)] #boad를 아홉자리의 3진수 숫자로 본다 총 3^9 = 19683 , #함수의 반환값이 -1이 될 수 있기 때문에 -2
     
     start = find_start(board)
     ans = can_win(board, start)
-    
+
+
     if ans == 1:
-        print(start)
+        print(start) # 처음 시작한 사람이 이김
     elif ans == -1:
-        print('o' if start == 'x' else 'x')
+        print('o' if start == 'x' else 'x') # 처음 시작한 사람 말고 이김
     elif ans == 0:
-        print('TIE')
+        print('TIE') #비김
