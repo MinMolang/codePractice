@@ -18,15 +18,19 @@ def decision(dists, power):
         if not b:
             return False
     return True
-#이분탐색    
+
+#이분탐색 
+#모든 기지를 연결할 수 있는 최소의 d거리 반환 
 def optimize(dists):
     hi = math.sqrt(1000.0 ** 2 + 1000.0 ** 2) + 1.0
     lo = 0.0
     while round(hi, 2) != round(lo, 2):
         mid = (hi + lo) / 2.0
+#mid가 가능하면 더 좋은 답(작은)를 찾는다
         if decision(dists, mid):
             hi = mid
         else:
+#mid가 불가능하면 더 나쁜답(큰)를 찾는다
             lo = mid
     return lo
 
