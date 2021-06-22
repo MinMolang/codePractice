@@ -18,7 +18,7 @@ def decision(dists, power):
         if not b:
             return False
     return True
-    
+#이분탐색    
 def optimize(dists):
     hi = math.sqrt(1000.0 ** 2 + 1000.0 ** 2) + 1.0
     lo = 0.0
