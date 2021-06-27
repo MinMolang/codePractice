@@ -44,7 +44,7 @@ def decision(dists, power):
 #이분탐색 
 #모든 기지를 연결할 수 있는 최소의 d거리 반환 
 def optimize(dists):
-    hi = math.sqrt(1000.0 ** 2 + 1000.0 ** 2) + 1.0
+    hi = math.sqrt(1000.0 ** 2 + 1000.0 ** 2) + 1.0 # 1415.21356237
     lo = 0.0
     while round(hi, 2) != round(lo, 2):
         mid = (hi + lo) / 2.0
