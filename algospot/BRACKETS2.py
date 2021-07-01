@@ -8,13 +8,14 @@
 # YES
 # NO
 # YES
-
 for _ in range(int(input())):
     brackets = input().rstrip()
-
-    left = []
-    ans = 'YES'
-    for char in brackets:
+    if len(brackets)% 2 == 1 :
+      ans = 'NO'
+    else:
+      left = []
+      ans = 'YES'
+      for char in brackets:
         if char in ['(', '{', '[']:
             left.append(char)
         else:
@@ -38,5 +39,7 @@ for _ in range(int(input())):
                 if char != ')':
                     ans = 'NO'
                     break
-
+    if left:
+      ans = 'NO'
     print(ans)
+
