@@ -10,6 +10,15 @@
 # 5
 
 # original의 접미사이면서 reversed_str의 접두사인 문자열 길이의 최대길이를 구한다
+#def maxOverlap(a,b)
+#n = len(a)
+#m = len(b)
+# reversed에 대해서 getPartialMatch, 실패함수구하기
+#pi = getPartialMatch(b)
+## begin == matched == 0에서 부터 시작
+#begin, matched = 0, 0
+#while begin <n:
+
 
 def maxOverlap(original, reversed_str):
 
