@@ -1,3 +1,4 @@
+
 # # 입력
 # 2
 # 7
@@ -41,4 +42,3 @@ for _ in range(int(input())):
     inorder = list(map(int, sys.stdin.readline().rstrip().split()))
 
     printPostOrder(preorder, inorder)
-
