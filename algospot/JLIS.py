@@ -48,14 +48,15 @@ def Jlis():
 rl = lambda: sys.stdin.readline()
 
 for _ in xrange(input()):
+
     lis_lenA, lis_lenB = map(int, rl().split())
     sequenceA = map(int, rl().split())
     sequenceB = list(map(int, rl().split()))
 
-    #다이나믹 메모이제이션션
-   dp = [[0] * (lis_lenB + 1) for _ in xrange(lis_lenA + 1)]
 
-    print
-    Jlis()
+    dp = [[0] * (lis_lenB + 1) for _ in xrange(lis_lenA + 1)]
+
+
+    print Jlis()
 
 
